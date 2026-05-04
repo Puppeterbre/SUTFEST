@@ -250,14 +250,14 @@
             transition: transform .25s ease;
         }
 
-        .event-body {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height .3s ease;
-        }
+.event-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+}
 
-        .event-content {
-            margin: 0 18px 18px 167px;
+.event-content {
+    margin: 0 18px 0 167px;
             padding: 14px 16px;
             border-left: 4px solid var(--yellow);
             border-radius: 14px;
@@ -265,8 +265,12 @@
             color: #514242;
             line-height: 1.55;
         }
-
-        .event-item.active .event-body { max-height: 300px; }
+.event-content {
+    overflow: hidden;
+}
+.event-item.active .event-body {
+    grid-template-rows: 1fr;
+}
         .event-item.active .chevron { transform: rotate(180deg); }
 
         .footer {
