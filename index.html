@@ -266,7 +266,7 @@
             line-height: 1.55;
         }
 
-        .event-item.active .event-body { max-height: 220px; }
+        .event-item.active .event-body { max-height: 400px; }
         .event-item.active .chevron { transform: rotate(180deg); }
 
         .footer {
@@ -289,6 +289,15 @@
         }
 html {
     scrollbar-gutter: stable;
+}
+        .event-body {
+    transition: max-height .45s ease, opacity .25s ease;
+    opacity: 0;
+}
+
+.event-item.active .event-body {
+    max-height: 300px;
+    opacity: 1;
 }
     </style>
 </head>
