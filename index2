@@ -1,1 +1,654 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUT FEST 2026 - Program</title>
+    <style>:root{
+    --bg:#070711;
+    --bg2:#12091b;
+    --panel:#111325;
+    --panel2:#181329;
 
+    --gold:#ffcc33;
+    --gold-soft:#ffd86b;
+
+    --orange:#ff8a1d;
+
+    --red:#cf102d;
+    --red-dark:#640714;
+
+    --cream:#f5e8d0;
+    --text:#fff7eb;
+    --muted:#c9b7be;
+
+    --line:rgba(255,138,29,.22);
+
+    --shadow:
+        0 20px 60px rgba(0,0,0,.55),
+        0 0 30px rgba(255,138,29,.08);
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scrollbar-gutter:stable;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    font-family:"Segoe UI",Arial,sans-serif;
+    color:var(--text);
+
+    background:
+        radial-gradient(circle at 50% -10%,
+            rgba(57,127,255,.25),
+            transparent 28rem),
+
+        radial-gradient(circle at 20% 0%,
+            rgba(255,138,29,.28),
+            transparent 22rem),
+
+        radial-gradient(circle at 80% 0%,
+            rgba(255,138,29,.22),
+            transparent 22rem),
+
+        linear-gradient(
+            180deg,
+            #090912 0%,
+            #100818 40%,
+            #070711 100%
+        );
+
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.75;
+
+    background:
+        radial-gradient(ellipse at 18% 0%,
+            rgba(255,153,51,.55),
+            transparent 14%),
+
+        radial-gradient(ellipse at 38% 0%,
+            rgba(72,150,255,.38),
+            transparent 18%),
+
+        radial-gradient(ellipse at 62% 0%,
+            rgba(72,150,255,.35),
+            transparent 18%),
+
+        radial-gradient(ellipse at 82% 0%,
+            rgba(255,153,51,.55),
+            transparent 14%);
+}
+
+.page{
+    width:min(980px,calc(100% - 28px));
+    margin:0 auto;
+    padding:24px 0 40px;
+}
+
+.hero{
+    position:relative;
+    overflow:hidden;
+
+    text-align:center;
+
+    padding:48px 28px 40px;
+
+    border-radius:36px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(20,23,48,.96),
+            rgba(12,10,22,.98)
+        );
+
+    border:1px solid rgba(255,138,29,.18);
+
+    box-shadow:var(--shadow);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,0,55,.08),
+            transparent 18%,
+            transparent 82%,
+            rgba(255,0,55,.08)
+        );
+
+    pointer-events:none;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,138,29,.18) 0 2px,
+            transparent 2px 74px,
+            rgba(255,138,29,.08) 74px 76px,
+            transparent 76px
+        );
+
+    opacity:.22;
+    pointer-events:none;
+}
+
+.logo-wrap{
+    position:relative;
+    z-index:2;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    width:220px;
+    aspect-ratio:1;
+
+    margin-bottom:18px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:
+        0 0 22px rgba(255,204,51,.28),
+        0 0 50px rgba(0,0,0,.45);
+}
+
+.logo-img{
+    width:92%;
+    height:92%;
+    object-fit:contain;
+    display:block;
+}
+
+h1{
+    position:relative;
+    z-index:2;
+
+    margin:0;
+
+    font-size:clamp(2.8rem,8vw,6.6rem);
+    line-height:.92;
+
+    letter-spacing:.04em;
+    text-transform:uppercase;
+
+    color:var(--gold);
+
+    -webkit-text-stroke:2px #d21d1d;
+
+    text-shadow:
+        0 4px 0 #710610,
+        0 10px 0 rgba(45,0,0,.9),
+        0 16px 30px rgba(0,0,0,.75),
+        0 0 24px rgba(255,204,51,.28);
+}
+
+.subtitle{
+    position:relative;
+    z-index:2;
+
+    margin:18px auto 0;
+    max-width:700px;
+
+    color:var(--cream);
+
+    font-size:1.05rem;
+    line-height:1.6;
+
+    opacity:.92;
+}
+
+.tabs{
+    position:sticky;
+    top:10px;
+    z-index:20;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+
+    margin:28px 0;
+
+    padding:10px;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(26,23,43,.96),
+            rgba(11,10,20,.96)
+        );
+
+    border:1px solid rgba(255,138,29,.15);
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:0 14px 40px rgba(0,0,0,.4);
+}
+
+.tab-btn{
+    border:0;
+    border-radius:18px;
+
+    padding:15px 10px;
+
+    cursor:pointer;
+
+    color:var(--cream);
+
+    background:transparent;
+
+    font-size:.95rem;
+    font-weight:800;
+
+    letter-spacing:.08em;
+    text-transform:uppercase;
+
+    transition:.22s ease;
+}
+
+.tab-btn:hover{
+    transform:translateY(-2px);
+}
+
+.tab-btn.active{
+    background:
+        linear-gradient(
+            135deg,
+            #b40f27,
+            #670714
+        );
+
+    color:#fff;
+
+    box-shadow:
+        0 12px 28px rgba(207,16,45,.32),
+        inset 0 1px 0 rgba(255,255,255,.1);
+}
+
+.day-content{
+    display:none;
+}
+
+.day-content.active{
+    display:block;
+    animation:fadeIn .28s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(6px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.day-title{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    margin:0 0 16px;
+
+    color:var(--gold);
+
+    font-size:1.45rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.day-title::after{
+    content:"";
+    flex:1;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,204,51,.85),
+            transparent
+        );
+}
+
+.event-list{
+    display:grid;
+    gap:16px;
+}
+
+.event-item{
+    overflow:hidden;
+
+    border-radius:24px;
+
+    border:1px solid rgba(255,138,29,.14);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(23,23,43,.96),
+            rgba(12,10,22,.98)
+        );
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.38);
+
+    transition:.22s ease;
+}
+
+.event-item:hover{
+    transform:translateY(-3px);
+    border-color:rgba(255,204,51,.28);
+}
+
+.event-item.headliner{
+    border:2px solid rgba(255,204,51,.55);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(98,8,20,.55),
+            rgba(21,18,40,.98)
+        );
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.45),
+        0 0 26px rgba(255,204,51,.12);
+}
+
+.event-header{
+    width:100%;
+    border:0;
+    background:transparent;
+
+    display:grid;
+    grid-template-columns:135px 1fr 26px;
+    gap:16px;
+
+    align-items:center;
+
+    padding:20px;
+
+    cursor:pointer;
+
+    text-align:left;
+    color:inherit;
+    font:inherit;
+}
+
+.time{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:42px;
+
+    padding:0 14px;
+
+    border-radius:999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(207,16,45,.22),
+            rgba(255,138,29,.18)
+        );
+
+    border:1px solid rgba(255,138,29,.18);
+
+    color:var(--gold-soft);
+
+    font-weight:700;
+    font-size:.92rem;
+
+    white-space:nowrap;
+}
+
+.title{
+    margin:0;
+
+    font-size:1.12rem;
+    font-weight:700;
+
+    line-height:1.3;
+
+    color:#fff7ea;
+}
+
+.meta{
+    display:block;
+
+    margin-top:5px;
+
+    color:var(--muted);
+
+    font-size:.92rem;
+
+    font-weight:500;
+}
+
+.main-tag{
+    display:inline-block;
+
+    margin-bottom:8px;
+    padding:5px 10px;
+
+    border-radius:999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d0132e,
+            #700714
+        );
+
+    color:#fff;
+
+    font-size:.68rem;
+    font-weight:900;
+
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.chevron{
+    color:var(--gold);
+
+    font-size:1rem;
+    text-align:center;
+
+    transition:transform .25s ease;
+}
+
+.event-body{
+    max-height:0;
+    overflow:hidden;
+
+    opacity:0;
+
+    transition:
+        max-height .45s ease,
+        opacity .28s ease;
+}
+
+.event-content{
+    margin:0 20px 20px 171px;
+
+    padding:16px 18px;
+
+    border-left:4px solid var(--gold);
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,204,51,.10),
+            rgba(255,138,29,.06)
+        );
+
+    color:#f2e7db;
+
+    line-height:1.65;
+}
+
+.event-item.active .event-body{
+    max-height:320px;
+    opacity:1;
+}
+
+.event-item.active .chevron{
+    transform:rotate(180deg);
+}
+
+.footer{
+    margin-top:34px;
+
+    text-align:center;
+
+    color:rgba(255,240,220,.55);
+
+    font-size:.82rem;
+
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+@media (max-width:640px){
+
+    .page{
+        width:min(100% - 18px,980px);
+        padding-top:10px;
+    }
+
+    .hero{
+        padding:28px 16px 24px;
+        border-radius:24px;
+    }
+
+    .logo-wrap{
+        width:160px;
+    }
+
+    .tabs{
+        gap:6px;
+        padding:7px;
+    }
+
+    .tab-btn{
+        font-size:.74rem;
+        padding:11px 6px;
+    }
+
+    .event-header{
+        grid-template-columns:1fr 24px;
+        gap:10px;
+        padding:16px;
+    }
+
+    .time{
+        grid-column:1 / -1;
+        justify-self:start;
+    }
+
+    .event-content{
+        margin:0 16px 16px;
+    }
+}
+    </style>
+</head>
+<body>
+    <main class="page">
+        <header class="hero">
+            <div class="logo-wrap">
+                <img class="logo-img" src="SUT krug.png" alt="Scena u Trenu logo">
+            </div>
+            <h1>SUT FEST 2026</h1>
+            <p class="subtitle">Tri dana improvizacije, nastupa, druženja i završne žurke. Klikni na stavku programa za više informacija.</p>
+        </header>
+
+        <nav class="tabs" aria-label="Dani festivala">
+            <button class="tab-btn active" onclick="openDay('day1', this)">11. jun</button>
+            <button class="tab-btn" onclick="openDay('day2', this)">12. jun</button>
+            <button class="tab-btn" onclick="openDay('day3', this)">13. jun</button>
+        </nav>
+
+        <section id="day1" class="day-content active">
+            <h2 class="day-title">Dan 1 · Otvaranje</h2>
+            <div class="event-list">
+                <article class="event-item"><button class="event-header" onclick="toggleEvent(this)"><span class="time">19:00–20:30</span><span><strong class="title">DELI PROSTOR · Otvaranje izložbe</strong><span class="meta">Svečano otvaranje festivala</span></span><span class="chevron">▼</span></button><div class="event-body"><p class="event-content">Izložba najzanimljivijih instagram storija u kojima nas je  publika tagovala proteklih godina</p></div></article>
+                <article class="event-item"><button class="event-header" onclick="toggleEvent(this)"><span class="time">21:00</span><span><strong class="title">Prednastup</strong><span class="meta">Uvodni scenski blok</span></span><span class="chevron">▼</span></button><div class="event-body"><p class="event-content">Stend up open mic! Nastupa Marko Marković.</p></div></article>
+                <article class="event-item"><button class="event-header" onclick="toggleEvent(this)"><span class="time">21:10</span><span><strong class="title">CONTRA</strong><span class="meta">Prateći program</span></span><span class="chevron">▼</span></button><div class="event-body"><p class="event-content">Koreografija kontra dens studija iz Niša.</p></div></article>
+                <article class="event-item headliner"><button class="event-header" onclick="toggleEvent(this)"><span class="time">21:15–23:15</span><span><span class="main-tag">Glavni program </span><strong class="title"> SUT · Scena u trenu</strong><span class="meta">Impro nastup večeri</span></span><span class="chevron">▼</span></button><div class="event-body"><p class="event-content">Glavni improvizacijski nastup prve večeri festivala.</p></div></article>
+            </div>
+        </section>
+
+        <section id="day2" class="day-content">
+            <h2 class="day-title">Dan 2 · Prateći program</h2>
+            <div class="event-list">
+                <article class="event-item"><button class="event-header" onclick="toggleEvent(this)"><span class="time">19:00–20:30</span><span><strong class="title">Stand up "Veverice umiru posle seksa" - Dušan Ščepihin.</strong><span class="meta">Nastup u klubu Maša</span></span><span class="chevron">▼</span></button><div class="event-body"><p class="event-content">Stand up niškog komičara i člana Scene u trenu Duleta!</p></div></article>
+                <article class="event-item"><button class="event-header" onclick="toggleEvent(this)"><span class="time">21:00–22:00</span><span><strong class="title">Roast</strong><span class="meta">Festivalski roast program</span></span><span class="chevron">▼</span></button><div class="event-body"><p class="event-content">Članovi Scene u trenu pripremaju Roast jedni o drugima. Pričamo šale na račun članova SUTa.</p></div></article>
+                <article class="event-item"><button class="event-header" onclick="toggleEvent(this)"><span class="time">22:00–22:30</span><span><strong class="title">SUT kviz i dodela medalja</strong><span class="meta">Interaktivni blok</span></span><span class="chevron">▼</span></button><div class="event-body"><p class="event-content">Koliko dobro poznajete SUT? Kviz za publiku i proglašenje pobednika. Vodi Andjelija Mirović</p></div></article>
+                <article class="event-item headliner"><button class="event-header" onclick="toggleEvent(this)"><span class="time">22:30–23:45</span><span><strong class="title">Jelka i ukrasi</strong><span class="meta">OPROŠTAJNI KONCERT!</span></span><span class="chevron">▼</span></button><div class="event-body"><p class="event-content">Legendarni bend sačinjen od članova SUTa "Jelka  i ukrasi" poslednji put upućuje svoje note ka publici Scene u trenu! </p></div></article>
+                <article class="event-item"><button class="event-header" onclick="toggleEvent(this)"><span class="time">23:45–02:00</span><span><strong class="title">SUT karaoke</strong><span class="meta">Večernje druženje</span></span><span class="chevron">▼</span></button><div class="event-body"><p class="event-content">Karaoke i druženje do kasno u noć. Vodi Kaća</p></div></article>
+            </div>
+        </section>
+
+            <section id="day3" class="day-content">
+            <h2 class="day-title">Dan 3 · Finale</h2>
+            <div class="event-list">
+                <article class="event-item"><button class="event-header" onclick="toggleEvent(this)"><span class="time">21:00</span><span><strong class="title">Prednastup</strong><span class="meta">Uvod u finalno veče</span></span><span class="chevron">▼</span></button><div class="event-body"><p class="event-content">Stend up open mic! Nastupa Marko Marković.</p></div></article>
+                <article class="event-item"><button class="event-header" onclick="toggleEvent(this)"><span class="time">21:10</span><span><strong class="title">CONTRA</strong><span class="meta">Finalni prateći blok</span></span><span class="chevron">▼</span></button><div class="event-body"><p class="event-content">Nastup Kontra dens studija iz Niša.</p></div></article>
+                <article class="event-item headliner"><button class="event-header" onclick="toggleEvent(this)"><span class="time">21:15–23:15</span><span><span class="main-tag">Glavni program </span><strong class="title"> SUT · Scena u trenu</strong><span class="meta">Veliko finale festivala</span></span><span class="chevron">▼</span></button><div class="event-body"><p class="event-content">Glavni improvizacijski nastup završne večeri.</p></div></article>
+                <article class="event-item"><button class="event-header" onclick="toggleEvent(this)"><span class="time">23:30–02:00</span><span><strong class="title">Wanna be DJ</strong><span class="meta">Završna žurka</span></span><span class="chevron">▼</span></button><div class="event-body"><p class="event-content">WANNABE DJ.</p></div></article>
+            </div>
+        </section>
+
+        <footer class="footer">© 2026 SUT FEST · Scena u Trenu. Svaki put vodi na SUT</footer>
+    </main>
+
+    <script>
+        function openDay(dayId, btn) {
+            document.querySelectorAll('.day-content').forEach(day => day.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(dayId).classList.add('active');
+            btn.classList.add('active');
+            document.querySelectorAll('.event-item').forEach(item => item.classList.remove('active'));
+        }
+
+        function toggleEvent(header) {
+            const item = header.closest('.event-item');
+            const wasActive = item.classList.contains('active');
+            document.querySelectorAll('.event-item').forEach(event => event.classList.remove('active'));
+            if (!wasActive) item.classList.add('active');
+        }
+    </script>
+    
+</body>
+</html>
